@@ -4,11 +4,16 @@
     <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
-    <string name="forgot_password">Forgot Password?</string>
+    <string name="prompt_confirm_password">Confirm Password</string>
+    <string name="forgot_password">Forgot your password?</string>
+    <string name="need_account">Need an account?</string>
     <string name="action_sign_in">LOGIN</string>
-    <string name="hint_firstname">First Name</string>
-    <string name="hint_lastname">Last Name</string>
-    <string name="btn_register">REGISTER</string>
+    <string name="hint_username">Full Name</string>
+    <string name="btn_register">Sign Up</string>
+    <string name="register_header">sign up in seconds and let\'s get active!</string>
+    <string name="social_media_account">or sign up using your social media account</string>
+    <string name="social_media_account2">sign in using your social media account</string>
+    <string name="credentials">or enter your credentials</string>
     <string name="already_registered">already registered?</string>
     <string name="btn_link_to_login"><u>login here.</u></string>
     <string name="welcome">Welcome</string>

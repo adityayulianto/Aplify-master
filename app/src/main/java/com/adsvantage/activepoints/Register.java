@@ -32,7 +32,6 @@ import com.adsvantage.activepoints.helper.SessionManager;
 public class Register extends Activity {
     private static final String TAG = Register.class.getSimpleName();
     private Button btnRegister;
-    private Button btnLinkToLogin;
     private EditText inputFirstName;
     private EditText inputLastName;
     private EditText inputEmail;
@@ -46,12 +45,10 @@ public class Register extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        inputFirstName = (EditText) findViewById(R.id.firstname);
-        inputLastName = (EditText) findViewById(R.id.lastname);
+        inputFirstName = (EditText) findViewById(R.id.username);
         inputEmail = (EditText) findViewById(R.id.email);
         inputPassword = (EditText) findViewById(R.id.password);
         btnRegister = (Button) findViewById(R.id.btnRegister);
-        btnLinkToLogin = (Button) findViewById(R.id.btnLinkToLoginScreen);
 
         // Progress dialog
         pDialog = new ProgressDialog(this);
@@ -87,17 +84,6 @@ public class Register extends Activity {
                             "Please enter your details!", Toast.LENGTH_LONG)
                             .show();
                 }
-            }
-        });
-
-        // Link to Login Screen
-        btnLinkToLogin.setOnClickListener(new View.OnClickListener() {
-
-            public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(),
-                        Login.class);
-                startActivity(i);
-                finish();
             }
         });
 

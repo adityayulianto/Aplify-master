@@ -13,10 +13,10 @@ package="com.adsvantage.activepoints">
     android:supportsRtl="true" android:theme="@style/AppTheme" android:label="Aplify">
     <meta-data android:name="com.google.android.geo.API_KEY"
         android:value="AIzaSyAsX2AuVxeZHIK4-jG0JyoA4YWeONhxrVc" />
-    <activity android:name=".LoginView" />
-    <activity android:name=".Login" />
-    <activity android:name=".Register" />
-    <activity android:name=".MainActivity">
+    <activity android:name=".LoginView" android:screenOrientation="portrait"/>
+    <activity android:name=".Login" android:screenOrientation="portrait"/>
+    <activity android:name=".Register" android:screenOrientation="portrait"/>
+    <activity android:name=".MainActivity" android:screenOrientation="portrait">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />

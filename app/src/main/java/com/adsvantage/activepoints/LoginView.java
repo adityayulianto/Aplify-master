@@ -61,16 +61,20 @@ public class LoginView extends AppCompatActivity {
         skip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(LoginView.this, Login.class);
-                startActivity(i);
-                finish();
+                int current = layouts.length-1;
+                viewPager.setCurrentItem(current);
             }
         });
 
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int current = getItem(+1);
+                int current;
+                if (next.getText() == "NEXT")
+                    current = getItem(+1);
+                else
+                    current = getItem(-1);
+
                 if(current < layouts.length)
                     viewPager.setCurrentItem(current);
                 else{
@@ -120,13 +124,13 @@ public class LoginView extends AppCompatActivity {
         public void onPageSelected(int position) {
             addBottomDots(position);
             if(position==layouts.length-1){
-                //next.setText("PROCEED");
-                next.setVisibility(View.GONE);
+                next.setText("BACK");
+                //next.setVisibility(View.GONE);
                 skip.setVisibility(View.GONE);
             }
             else {
-                //next.setText("NEXT");
-                next.setVisibility(View.VISIBLE);
+                next.setText("NEXT");
+                //next.setVisibility(View.VISIBLE);
                 skip.setVisibility(View.VISIBLE);
             }
         }
@@ -150,11 +154,37 @@ public class LoginView extends AppCompatActivity {
     public class ViewPagerAdapter extends PagerAdapter
     {
         private LayoutInflater layoutInflater;
+        private int resId = 0;
+        private View v;
+        private Button btnRegister;
+        private TextView txtLogin;
 
         @Override
         public Object instantiateItem(ViewGroup container, int position) {
             layoutInflater = (LayoutInflater)getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            View v = layoutInflater.inflate(layouts[position], container, false);
+            v = layoutInflater.inflate(layouts[position], container, false);
+
+            if(position == layouts.length - 1){
+                btnRegister = (Button) v.findViewById(R.id.button2);
+                btnRegister.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View m) {
+                        Intent i = new Intent(LoginView.this, Register.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+
+                txtLogin = (TextView) v.findViewById(R.id.link_login);
+                txtLogin.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View m) {
+                        Intent i = new Intent(LoginView.this, Login.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+            }
             container.addView(v);
             return v;
         }

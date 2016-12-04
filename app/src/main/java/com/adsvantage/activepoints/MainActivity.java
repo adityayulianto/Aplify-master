@@ -131,21 +131,17 @@ public class MainActivity extends AppCompatActivity
         int id = item.getItemId();
 
         if (id == R.id.nav_status) {
-            //Set the fragment initially
-            MainFragment fragment = new MainFragment();
+            ComingSoonFragment fragment = new ComingSoonFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-            // Handle the camera action
         } else if (id == R.id.nav_quest) {
-            //Set the fragment initially
-            MainFragment fragment = new MainFragment();
+            ComingSoonFragment fragment = new ComingSoonFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
                     getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.fragment_container, fragment);
             fragmentTransaction.commit();
-
         } else if (id == R.id.nav_achievement) {
             AchievementFragment fragment = new AchievementFragment();
             android.support.v4.app.FragmentTransaction fragmentTransaction =
@@ -155,6 +151,13 @@ public class MainActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_share) {
 
+        } else if(id == R.id.nav_start) {
+            //Set the fragment initially
+            MainFragment fragment = new MainFragment();
+            android.support.v4.app.FragmentTransaction fragmentTransaction =
+                    getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, fragment);
+            fragmentTransaction.commit();
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

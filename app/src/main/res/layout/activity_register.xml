@@ -9,9 +9,17 @@
         android:src="@drawable/registerheader"
         android:id="@+id/login_header"
         android:layout_width="match_parent"
-        android:layout_height="126dp" /
+        android:layout_height="126dp" />
+
+    <TextView
+        android:text="@string/register_header"
+        android:layout_width="match_parent"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:id="@+id/tvRegisterHeader" />
 
     <RelativeLayout
+        android:layout_marginTop="10dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -25,15 +33,15 @@
 
         <android.support.design.widget.TextInputLayout
             android:id="@+id/txLayoutName"
-            android:layout_toRightOf="@id/logo_email"
+            android:layout_toRightOf="@id/logo_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
             <AutoCompleteTextView
-                android:id="@+id/fname"
+                android:id="@+id/username"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:hint="@string/hint_firstname"
+                android:hint="@string/hint_username"
                 android:inputType="textEmailAddress"
                 android:imeOptions="actionNext"
                 android:maxLines="1" />
@@ -41,42 +49,17 @@
         </android.support.design.widget.TextInputLayout>
 
         <ImageView
-            android:src="@drawable/email_register"
-            android:id="@+id/logo_email"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="5dp"
+            android:src="@drawable/password_register"
+            android:id="@+id/logo_password"
             android:layout_below="@id/logo_name"
             android:layout_width="50dp"
             android:layout_height="50dp" />
 
         <android.support.design.widget.TextInputLayout
-            android:id="@+id/txLayoutEmail"
+            android:id="@+id/txLayoutPassword"
+            android:layout_toRightOf="@id/logo_password"
             android:layout_below="@id/txLayoutName"
-            android:layout_toRightOf="@id/logo_email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <AutoCompleteTextView
-                android:id="@+id/email"
-                android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:hint="@string/prompt_email"
-                android:inputType="textEmailAddress"
-                android:imeOptions="actionNext"
-                android:maxLines="1" />
-
-        </android.support.design.widget.TextInputLayout>
-
-        <ImageView
-            android:layout_marginTop="10dp"
-            android:src="@drawable/password_register"
-            android:id="@+id/logo_password"
-            android:layout_below="@id/logo_email"
-            android:layout_width="50dp"
-            android:layout_height="50dp" />
-
-        <android.support.design.widget.TextInputLayout
-            android:layout_toEndOf="@id/logo_password"
-            android:layout_below="@id/txLayoutEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -93,30 +76,115 @@
 
         </android.support.design.widget.TextInputLayout>
 
+        <ImageView
+            android:layout_marginTop="5dp"
+            android:src="@drawable/password_register"
+            android:id="@+id/logo_confirm_password"
+            android:layout_below="@id/logo_password"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txLayoutPasswordConfirm"
+            android:layout_toRightOf="@id/logo_password"
+            android:layout_below="@id/txLayoutPassword"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/password_confirm"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_confirm_password"
+                android:imeActionId="@+id/login"
+                android:imeActionLabel="@string/action_sign_in_short"
+                android:imeOptions="actionDone"
+                android:inputType="textPassword"
+                android:maxLines="1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <ImageView
+            android:src="@drawable/email_register"
+            android:id="@+id/logo_email"
+            android:layout_marginTop="5dp"
+            android:layout_below="@id/logo_confirm_password"
+            android:layout_width="50dp"
+            android:layout_height="50dp" />
+
+        <android.support.design.widget.TextInputLayout
+            android:id="@+id/txLayoutEmail"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/txLayoutPasswordConfirm"
+            android:layout_toRightOf="@id/logo_email"
+            android:layout_alignParentEnd="true">
+
+            <AutoCompleteTextView
+                android:id="@+id/email"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/prompt_email"
+                android:inputType="textEmailAddress"
+                android:imeOptions="actionNext"
+                android:maxLines="1" />
+
+        </android.support.design.widget.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="17dp"
+            android:background="@color/register"
+            android:text="@string/btn_register"
+            android:textColor="@color/white"
+            android:layout_below="@+id/logo_email"
+            android:layout_alignParentStart="true" />
+
+        <View
+            android:id="@+id/separator"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/btnRegister"
+            android:background="@android:color/darker_gray"/>
+
+        <TextView
+            android:text="@string/social_media_account"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/separator"
+            android:layout_marginTop="10dp"
+            android:layout_centerInParent="true"
+            android:id="@+id/tvSocMedAccount" />
+
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/tvSocMedAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btnGooglePlus"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/google_plus"
+                android:layout_marginEnd="99dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true" />
+
+            <Button
+                android:id="@+id/btnFacebook"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:background="@drawable/facebook"
+                android:layout_marginLeft="99dp"
+                android:layout_alignParentTop="true" />
+
+        </RelativeLayout>
+
+
     </RelativeLayout>
-
-    <!-- Login Button -->
-
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dip"
-        android:background="#ea4c88"
-        android:text="@string/btn_register"
-        android:textColor="@color/white" />
-
-    <!-- Link to Login Screen -->
-
-    <Button
-        android:id="@+id/btnLinkToLoginScreen"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dip"
-        android:background="@null"
-        android:text="@string/btn_link_to_login"
-        android:textAllCaps="false"
-        android:textColor="@color/white"
-        android:textSize="15dp" />
 
 </LinearLayout>
