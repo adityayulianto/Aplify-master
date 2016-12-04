@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_marginTop="3dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:id="@+id/tblLayout"
+            android:paddingTop="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:stretchColumns="0,2"
+            android:layout_below="@id/lGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/lDuration"
+                    android:layout_weight="1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:text="0:00:00"
+                        android:id="@+id/tvDuration"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:layout_below="@id/tvDuration"
+                        android:id="@+id/tvDurationInfo"
+                        android:text="@string/duration"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textAlignment="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+                <View android:id="@+id/viewGridLineHorizontal"
+                    android:layout_width="1dip"
+                    android:layout_height="fill_parent"
+                    android:background="#000000" />
+
+                <RelativeLayout
+                    android:id="@+id/lDistance"
+                    android:layout_weight="1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/tvDistance"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_below="@id/tvDistance"
+                        android:id="@+id/tvDistanceInfo"
+                        android:text="@string/distance_km"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textAlignment="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+                <View android:id="@+id/viewGridLineHorizontal2"
+                    android:layout_width="1dip"
+                    android:layout_height="fill_parent"
+                    android:background="#000000" />
+
+                <RelativeLayout
+                    android:id="@+id/lCalories"
+                    android:layout_weight="1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/tvCalories"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_below="@id/tvCalories"
+                        android:id="@+id/tvCaloriesInfo"
+                        android:text="@string/calories"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textAlignment="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+
+
+            </TableRow>
+
+        </TableLayout>
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_APResult"
+        android:textSize="24sp"
+        android:textAllCaps="true"
+        android:layout_span="3"
+        android:paddingLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_below="@id/RelativeLayout2"
+        android:text="@string/ap_result" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout3"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@id/tv_APResult"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TableLayout
+            android:id="@+id/Row1"
+            android:stretchColumns="1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:layout_span="3"
+                    android:text="@string/ap_activity" />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:id="@+id/tvActivityAP"
+                    android:textAllCaps="true"
+                    android:text="0" />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:text="     " />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="APs" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:layout_span="3"
+                    android:text="@string/ap_rounding" />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:id="@+id/tvRoundingAP"
+                    android:textAllCaps="true"
+                    android:text="0" />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:text="     " />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="APs" />
+
+            </TableRow>
+
+            <TableRow>
+
+                <TextView
+                    android:layout_column="1"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:text="@string/ap_multiplier" />
+
+                <TextView
+                    android:layout_column="1"
+                    android:id="@+id/tvMultiplier"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:text="1.5" />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:text=" X     " />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:id="@+id/tvMultiplierAP"
+                    android:textAllCaps="true"
+                    android:text="0" />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:text="     " />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="APs" />
+
+            </TableRow>
+
+            <TableRow android:layout_marginTop="5dp">
+
+                <TextView
+                    android:layout_column="1"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:layout_span="3"
+                    android:text="@string/ap_total" />
+
+                <TextView
+                    android:id="@+id/tvTotalAP"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:text="0" />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:text="     " />
+
+                <TextView
+                    android:textSize="20sp"
+                    android:textStyle="bold"
+                    android:text="APs" />
+
+            </TableRow>
+
+        </TableLayout>
+
+    </RelativeLayout>
+
+</RelativeLayout>
+
+

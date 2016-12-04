@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/RelativeLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools" android:id="@+id/drawer_layout"
+        android:layout_width="match_parent" android:layout_height="match_parent"
+        android:fitsSystemWindows="true" tools:openDrawer="start"/>
+
+    <android.support.design.widget.NavigationView android:id="@+id/nav_view"
+        android:layout_width="wrap_content" android:layout_height="match_parent"
+        android:layout_gravity="start" android:fitsSystemWindows="true"
+        app:headerLayout="@layout/nav_drawer" app:menu="@menu/menu_drawer" />
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/my_toolbar2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?android:attr/actionBarSize"
+        android:background="@color/colorPrimary" />
+
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/map"
+        android:layout_width="match_parent"
+        android:layout_below="@id/my_toolbar2"
+        class="com.google.android.gms.maps.SupportMapFragment"
+        android:layout_height="225dp" />
+
+    <RelativeLayout
+        android:id="@+id/RelativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/map"
+        android:layout_alignParentStart="true">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingBottom="10dp"
+            android:id="@+id/tvDistanceInfo"
+            android:text="@string/distance"
+            android:textStyle="bold"
+            android:textAllCaps="true"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true" />
+
+        <LinearLayout
+            android:id="@+id/lGrid"
+            android:layout_width="wrap_content"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:layout_below="@id/tvDistanceInfo"
+            android:layout_height="wrap_content">
+
+            <View android:id="@+id/viewGridLines"
+                android:layout_height="1dip"
+                android:layout_width="fill_parent"
+                android:background="#000000" />
+
+        </LinearLayout>
+
+        <TableLayout
+            android:id="@+id/tblLayout"
+            android:paddingTop="5dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:stretchColumns="0,2"
+            android:layout_below="@id/lGrid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <RelativeLayout
+                    android:id="@+id/lDuration"
+                    android:layout_weight="1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:text="0:00:00"
+                        android:id="@+id/tvDuration"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:layout_below="@id/tvDuration"
+                        android:id="@+id/tvDurationInfo"
+                        android:text="@string/duration"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textAlignment="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                </RelativeLayout>
+
+                <View android:id="@+id/viewGridLineHorizontal"
+                    android:layout_width="1dip"
+                    android:layout_below="@id/tvDistanceInfo"
+                    android:layout_height="fill_parent"
+                    android:background="#000000" />
+
+                <RelativeLayout
+                    android:id="@+id/lCalories"
+                    android:layout_weight="1"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="0dp">
+
+                    <TextView
+                        android:text="0"
+                        android:id="@+id/tvCalories"
+                        android:textSize="30sp"
+                        android:textAlignment="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+
+                    <TextView
+                        android:layout_below="@id/tvCalories"
+                        android:id="@+id/tvCaloriesInfo"
+                        android:text="@string/calories"
+                        android:textStyle="bold"
+                        android:textAllCaps="true"
+                        android:textAlignment="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"/>
+                </RelativeLayout>
+            </TableRow>
+
+        </TableLayout>
+
+        <TextView
+            android:text="km"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="18dp"
+            android:id="@+id/tvDistanceKm"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:paddingLeft="10dp"
+            android:layout_toRightOf="@+id/textView2"
+            android:layout_centerHorizontal="true" />
+
+        <TextView
+            android:text="0.0"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/textView2"
+            android:textSize="60sp"
+            android:textStyle="bold"
+            android:layout_alignBaseline="@+id/tvDistanceKm"
+            android:layout_alignBottom="@+id/tvDistanceKm"
+            android:layout_centerHorizontal="true" />
+
+    </RelativeLayout>
+
+    <Button android:id="@+id/btnStart"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:textSize="18sp"
+        android:textAllCaps="true"
+        android:text="@string/start"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RelativeLayout2"
+        android:onClick="btnStartOnClick" />
+
+    <Button android:id="@+id/btnRunAgain"
+        android:layout_centerHorizontal="true"
+        android:layout_width="200dp"
+        android:textSize="18sp"
+        android:textAllCaps="true"
+        android:text="@string/back_to_activity"
+        android:layout_marginTop="15dp"
+        android:background="@color/colorPrimary"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/RelativeLayout2"
+        android:onClick="btnRunAgainOnClick"/>
+
+</RelativeLayout>
+
+

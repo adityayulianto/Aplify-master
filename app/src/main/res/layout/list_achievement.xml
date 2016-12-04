@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:paddingTop="20dp" android:paddingBottom="20dp"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/badges_example"
+        android:id="@+id/badges" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:text="Barefoot"
+        android:textStyle="bold"
+        android:textColor="@color/bg_register"
+        android:id="@+id/tvBadgesName"
+        android:layout_toEndOf="@+id/badges"
+        android:layout_marginTop="11dp" />
+
+    <TextView
+        android:text="1 step"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:textColor="@color/input_register"
+        android:layout_below="@id/tvBadgesName"
+        android:layout_toEndOf="@id/badges"
+        android:id="@+id/tvBadgesInfo" />
+
+</RelativeLayout>
